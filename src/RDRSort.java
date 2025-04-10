@@ -59,6 +59,15 @@ public class RDRSort {
                 System.out.println("Times: "+treesettime);
                 System.out.printf("Time to process using TreeSet: %.6f s %n",differenceseconds);
                 break;
+            case 5: //Least Common Multiple
+                starttime = System.nanoTime();
+                int mmctime=mmcCode(); 
+                endtime = System.nanoTime();
+                difference = endtime - starttime;
+                differenceseconds = difference / 1_000_000_000.0;
+                System.out.println("Times: "+mmctime);
+                System.out.printf("Time to process using Least Common Multiple: %.6f s %n",differenceseconds);
+                break;
 
             default:
                 System.out.println("Wrong");
@@ -154,6 +163,38 @@ public class RDRSort {
         }
         return sorts;
     }
+
+    private int mmcCode(){
+        int actual = 0;
+        int ctr = mmcCodeSort(actual, this.numbers[actual]);
+        int rep = 0;
+        int ctr2;
+        for (int i =0;i<this.size;i++){
+            ctr2 =0;
+            if(this.numbers[i]!=-1){
+                ctr2 = mmcCodeSort(i, this.numbers[i]);
+            }
+            if(ctr2==0 && i==0){
+                rep = ctr;
+                continue;}
+            if(ctr2==0){continue;}
+            rep = rep * ctr2;
+        }
+        return rep;
+    }
+
+    private int mmcCodeSort(int actual, int next){
+        int ctr = 0;
+        while (this.positions[actual]!=-1){
+            next = this.positions[actual];
+            this.positions[actual] = -1;
+            actual = next;
+            ctr++;
+        }
+        return ctr;
+    }
+
+
 }
 /*
     START WRITE REPORT BEFORE CHANGE CODE

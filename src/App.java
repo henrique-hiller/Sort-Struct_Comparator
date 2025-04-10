@@ -17,6 +17,7 @@ public class App{
         System.out.println("[2] HashSet");
         System.out.println("[3] HashMap");
         System.out.println("[4] TreeSet");
-        System.out.println("[5] Caso especial???");
+        System.out.println("[5] Using Least Common Multiple");
+        
     }
 }
