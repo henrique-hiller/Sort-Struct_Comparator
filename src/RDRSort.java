@@ -4,11 +4,11 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Scanner;
-import java.util.TreeSet;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Scanner;
+import java.util.TreeSet;
 
 public class RDRSort {
     
@@ -106,7 +106,7 @@ public class RDRSort {
         }
     }
 
-    private int arrayListCode(){ //change to List<Integer>. see more on website
+    private int arrayListCode(){ 
         ArrayList <int []> arraylist = new ArrayList<>();
         boolean exists = false;
         int sorts = 0;
@@ -123,8 +123,8 @@ public class RDRSort {
         return sorts;
     }
 
-    private int hashSetCode(){ //change to List<Integer>
-        HashSet <String> hashset = new HashSet<String>();
+    private int hashSetCode(){ 
+        HashSet <String> hashset = new HashSet<>();
         int sorts = 0;
         String value = Arrays.toString(this.numbers);
         while (!hashset.contains(value)){
@@ -137,9 +137,9 @@ public class RDRSort {
     }
 
     private int hashMapCode(){
-        HashMap <String, Integer> hashmap = new HashMap<String, Integer> (); 
+        HashMap <String, Integer> hashmap = new HashMap<> (); 
         int sorts =0;
-        String value = Arrays.toString(this.numbers); //instead of String, use List<Integer>
+        String value = Arrays.toString(this.numbers);
         Integer x = hashmap.get(value);
         while(x == null){
             hashmap.put(value,0);
@@ -152,9 +152,9 @@ public class RDRSort {
     }
 
     private int treeSetCode(){
-        TreeSet <String> treeset = new TreeSet<String>(); //change from <String> to <List<Integer>>!
+        TreeSet <String> treeset = new TreeSet<>();
         int sorts =0;
-        String value = Arrays.toString(this.numbers); //List<Integer> value!
+        String value = Arrays.toString(this.numbers); 
         while (!treeset.contains(value)){
             treeset.add(value);
             sorting();
@@ -196,36 +196,3 @@ public class RDRSort {
 
 
 }
-/*
-    START WRITE REPORT BEFORE CHANGE CODE
-
-
- * IMPLEMENT BELOW
- * private int hashMapCode() {
-        Set<List<Integer>> seenSequences = new HashSet<>();
-        int sorts = 0;
-        List<Integer> value = toList(this.numbers);
-        
-        while (!seenSequences.contains(value)) {
-            seenSequences.add(new ArrayList<>(value)); // Store a copy of the list
-            sorting(); // Sorting function modifies this.numbers
-            value = toList(this.numbers);
-            sorts++;
-        }
-        return sorts;
-    }
-
-    private List<Integer> toList(int[] arr) {
-        List<Integer> list = new ArrayList<>(arr.length);
-        for (int num : arr) {
-            list.add(num);
-        }
-        return list;
-    }
- * 
- * 
- */
-
-
-
-
