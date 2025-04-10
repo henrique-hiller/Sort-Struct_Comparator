@@ -22,53 +22,53 @@ public class RDRSort {
         long starttime;
         long endtime;
         long difference;
+        int times;
         switch (selection){
             case 1: //arraylist
                 starttime = System.nanoTime();
-                int arraytime=arrayListCode();
+                times=arrayListCode();
                 endtime = System.nanoTime();
                 difference = endtime - starttime;
                 double differenceseconds = difference / 1_000_000_000.0;
-                System.out.println("Times: "+arraytime);
+                System.out.println("Times: "+times);
                 System.out.printf("Time to process using ArrayList: %.6f s %n",differenceseconds);
                 break;
             case 2: //hashset
                 starttime = System.nanoTime();
-                int hashsettime=hashSetCode();
+                times=hashSetCode();
                 endtime = System.nanoTime();
                 difference = endtime - starttime;
                 differenceseconds = difference / 1_000_000_000.0;
-                System.out.println("Times: "+hashsettime);
+                System.out.println("Times: "+times);
                 System.out.printf("Time to process using HashSet: %.6f s %n",differenceseconds);
                 break;
             case 3: //hashmap
                 starttime = System.nanoTime();
-                int hashmaptime=hashMapCode();
+                times=hashMapCode();
                 endtime = System.nanoTime();
                 difference = endtime - starttime;
                 differenceseconds = difference / 1_000_000_000.0;
-                System.out.println("Times: "+hashmaptime);
+                System.out.println("Times: "+times);
                 System.out.printf("Time to process using HashMap: %.6f s %n",differenceseconds);
                 break;
             case 4: //treeset
                 starttime = System.nanoTime();
-                int treesettime=treeSetCode();
+                times=treeSetCode();
                 endtime = System.nanoTime();
                 difference = endtime - starttime;
                 differenceseconds = difference / 1_000_000_000.0;
-                System.out.println("Times: "+treesettime);
+                System.out.println("Times: "+times);
                 System.out.printf("Time to process using TreeSet: %.6f s %n",differenceseconds);
                 break;
             case 5: //Least Common Multiple
                 starttime = System.nanoTime();
-                int mmctime=mmcCode(); 
+                times=mmcCode(); 
                 endtime = System.nanoTime();
                 difference = endtime - starttime;
                 differenceseconds = difference / 1_000_000_000.0;
-                System.out.println("Times: "+mmctime);
+                System.out.println("Times: "+times);
                 System.out.printf("Time to process using Least Common Multiple: %.6f s %n",differenceseconds);
                 break;
-
             default:
                 System.out.println("Wrong");
                 System.exit(1);
