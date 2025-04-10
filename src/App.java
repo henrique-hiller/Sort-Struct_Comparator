@@ -5,18 +5,18 @@ public class App{
         System.out.println("Please type the file name (with .txt at the end): ");
         Scanner sc = new Scanner (System.in);
         String file = sc.nextLine();
-        opcoes();
+        selectionScreen();
         int selection = sc.nextInt();
         RDRSort rdr = new RDRSort(file, selection);
         sc.close();
     }
 
-    public static void opcoes(){
+    public static void selectionScreen(){
         System.out.println("Choose the data structure");
         System.out.println("[1] ArrayList");
         System.out.println("[2] HashSet");
         System.out.println("[3] HashMap");
         System.out.println("[4] TreeSet");
-        System.out.println("[5] Caso espacial???");
+        System.out.println("[5] Caso especial???");
     }
 }
