@@ -113,6 +113,7 @@ public class RDRSort {
         while(!exists){
             for (int [] array: arraylist){
                 if (Arrays.equals(array,this.numbers)){
+                    exists = true;
                     return sorts;
                 }
             }
@@ -165,8 +166,7 @@ public class RDRSort {
     }
 
     private long mmcCode(){
-        int actual = 0;
-        long ctr = mmcCodeSort(actual, this.numbers[actual]);
+        long ctr = mmcCodeSort(0, this.numbers[0]);
         long rep = 0;
         long ctr2;
         for (int i =0;i<this.size;i++){
