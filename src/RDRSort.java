@@ -123,7 +123,7 @@ public class RDRSort {
         return sorts;
     }
 
-    private int hashSetCode(){  //change to <List<Integer>>
+    private int hashSetCode(){ 
         HashSet <String> hashset = new HashSet<>();
         int sorts = 0;
         String value = Arrays.toString(this.numbers);
