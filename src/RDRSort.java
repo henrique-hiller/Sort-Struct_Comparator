@@ -124,7 +124,7 @@ public class RDRSort {
         return sorts;
     }
 
-    private int hashSetCode(){  //change to <List<Integer>>
+    private int hashSetCode(){ 
         HashSet <String> hashset = new HashSet<>();
         int sorts = 0;
         String value = Arrays.toString(this.numbers);
@@ -166,7 +166,8 @@ public class RDRSort {
     }
 
     private long mmcCode(){
-        long ctr = mmcCodeSort(0, this.numbers[0]);
+        int actual = 0;
+        long ctr = mmcCodeSort(actual, this.numbers[actual]);
         long rep = 0;
         long ctr2;
         for (int i =0;i<this.size;i++){
