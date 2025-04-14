@@ -165,7 +165,6 @@ public class RDRSort {
     }
 
     private long mmcCode(){
-        int actual = 0;
         long ctr = mmcCodeSort(actual, this.numbers[actual]);
         long rep = 0;
         long ctr2;
