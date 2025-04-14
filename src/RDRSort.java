@@ -62,11 +62,11 @@ public class RDRSort {
                 break;
             case 5: //Least Common Multiple
                 starttime = System.nanoTime();
-                times=mmcCode(); 
+                long timeslong=mmcCode(); 
                 endtime = System.nanoTime();
                 difference = endtime - starttime;
                 differenceseconds = difference / 1_000_000_000.0;
-                System.out.println("Times: "+times);
+                System.out.println("Times: "+timeslong);
                 System.out.printf("Time to process using Least Common Multiple: %.6f s %n",differenceseconds);
                 break;
             default:
@@ -164,11 +164,11 @@ public class RDRSort {
         return sorts;
     }
 
-    private int mmcCode(){
+    private long mmcCode(){
         int actual = 0;
-        int ctr = mmcCodeSort(actual, this.numbers[actual]);
-        int rep = 0;
-        int ctr2;
+        long ctr = mmcCodeSort(actual, this.numbers[actual]);
+        long rep = 0;
+        long ctr2;
         for (int i =0;i<this.size;i++){
             ctr2 =0;
             if(this.numbers[i]!=-1){
@@ -183,8 +183,8 @@ public class RDRSort {
         return rep;
     }
 
-    private int mmcCodeSort(int actual, int next){
-        int ctr = 0;
+    private long mmcCodeSort(int actual, int next){
+        long ctr = 0;
         while (this.positions[actual]!=-1){
             next = this.positions[actual];
             this.positions[actual] = -1;
